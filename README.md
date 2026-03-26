@@ -29,7 +29,7 @@ Electricity companies want to be as prepared as possible to best serve their cli
 
 
 #### Press Release 
-headline -> link to separate markdown file containing press release 
+[Let's hope energy can keep up with Mother Nature's big changes](https://github.com/ivasslides/ds4320-project-1/blob/main/press_release.md) 
 
 ## Domain Exposition 
 #### Terminology 
@@ -44,11 +44,11 @@ The main domain that this project lives in is Demand Forecasting Analytics. Dema
 #### Summary of Readings 
 | Title | Brief Description | Link to File |
 | :--- | :--- | :--- |
-|*Allocation of policy resources for energy storage development <br> considering the Inflation Reduction Act* | This paper touches on the issue surrounding gas emissions from energy storage areas, and how the Inflation Reduction Act <br> has impacted things. It examines the options for different regions, and the tax and emissions benefits for each. | https://myuva-my.sharepoint.com/:b:/g/personal/fbv2sc_virginia_edu/IQAobMfcg-0YTpssH-BMO19uAcW-IEkpGgbGLEM_FBrCyBg?e=GsZfPE |
-|*Extreme weather events on energy systems* | This paper examines the impacts of extreme weather events on energy systems and their associated infrastructures. It reviews <br> published studies to find a solution to help energy systems maintain regular operations. | https://myuva-my.sharepoint.com/:b:/g/personal/fbv2sc_virginia_edu/IQAMSpiPuU2sRIKLnHiKZIKfAasXiMpPlPZS9cxc60p2Qc0?e=btj1xF |
-| *How does extreme weather impact energy demand and energy rates* | This article explains why and which weather events have the biggest impact on energy demands and the prices. It also gives <br>advice to help clients keep costs down. | https://myuva-my.sharepoint.com/:b:/g/personal/fbv2sc_virginia_edu/IQDQYKV7yPiCSLWQR4xDmNX9AY8Qgi98dtROQOk6OTBGtNU?e=ACKCzt |
-| *Keeping the lights on in our neighborhoods during power outages* | This blog dives into recent microgrid projects that have been started in a variety of states to help with electricity demands. <br> The goal of these projects, funded by the DOE in 2023, is to increase resilience during major events and reduce power outages. | https://myuva-my.sharepoint.com/:b:/g/personal/fbv2sc_virginia_edu/IQD_8rKMuosQTrTh9D7Nf-vIAaFrn93OXRWaAcmbzXBnwKw?e=79zTia |
-| *NOAA Local climatological data datase documentation* | This is the offica documentation from the NOAA local climatological dataset (LCD), where the weather data for this project was requested from. It defines the variables in the dataset and how they are collected. | https://myuva-my.sharepoint.com/:b:/g/personal/fbv2sc_virginia_edu/IQBBpSWIgpgNRqHtKWDpZSDrAX6YE6JG0rFcJOeMhdzvUYs?e=vZ74iX
+|*Allocation of policy resources for energy storage development <br> considering the Inflation Reduction Act* | This paper touches on the issue surrounding gas emissions from energy storage areas, and how the Inflation Reduction Act <br> has impacted things. It examines the options for different regions, and the tax and emissions benefits for each. | [link](https://myuva-my.sharepoint.com/:b:/g/personal/fbv2sc_virginia_edu/IQAobMfcg-0YTpssH-BMO19uAcW-IEkpGgbGLEM_FBrCyBg?e=GsZfPE) |
+|*Extreme weather events on energy systems* | This paper examines the impacts of extreme weather events on energy systems and their associated infrastructures. It reviews <br> published studies to find a solution to help energy systems maintain regular operations. | [link](https://myuva-my.sharepoint.com/:b:/g/personal/fbv2sc_virginia_edu/IQAMSpiPuU2sRIKLnHiKZIKfAasXiMpPlPZS9cxc60p2Qc0?e=btj1xF) |
+| *How does extreme weather impact energy demand and energy rates* | This article explains why and which weather events have the biggest impact on energy demands and the prices. It also gives <br>advice to help clients keep costs down. | [link](https://myuva-my.sharepoint.com/:b:/g/personal/fbv2sc_virginia_edu/IQDQYKV7yPiCSLWQR4xDmNX9AY8Qgi98dtROQOk6OTBGtNU?e=ACKCzt) |
+| *Keeping the lights on in our neighborhoods during power outages* | This blog dives into recent microgrid projects that have been started in a variety of states to help with electricity demands. <br> The goal of these projects, funded by the DOE in 2023, is to increase resilience during major events and reduce power outages. | [link](https://myuva-my.sharepoint.com/:b:/g/personal/fbv2sc_virginia_edu/IQD_8rKMuosQTrTh9D7Nf-vIAaFrn93OXRWaAcmbzXBnwKw?e=79zTia) |
+| *NOAA Local climatological data datase documentation* | This is the offica documentation from the NOAA local climatological dataset (LCD), where the weather data for this project was requested from. It defines the variables in the dataset and how they are collected. | [link](https://myuva-my.sharepoint.com/:b:/g/personal/fbv2sc_virginia_edu/IQBBpSWIgpgNRqHtKWDpZSDrAX6YE6JG0rFcJOeMhdzvUYs?e=vZ74iX)
 
 ## Data Creation 
 #### Raw Data Acquistition 
