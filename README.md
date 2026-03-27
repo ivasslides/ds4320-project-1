@@ -8,7 +8,7 @@ Executive Summary
 | Name | Iliana Vasslides | 
 | NetID | fbv2sc | 
 | DOI | ..... |
-| Press Release | ..... | 
+| Press Release | [link to Press Release](https://github.com/ivasslides/ds4320-project-1/blob/main/press_release.md) | 
 | Data | [link to data folder](https://myuva-my.sharepoint.com/:f:/g/personal/fbv2sc_virginia_edu/IgD0_dw8bOXbQqtcXuFmWMcQAbQHJMFY-ToaHPTsxSS_jvY?e=cAJDgh)  | 
 | Pipeline | .... | 
 | License | ... | 
@@ -33,7 +33,15 @@ Electricity companies want to be as prepared as possible to best serve their cli
 
 ## Domain Exposition 
 #### Terminology 
-*table* 
+| Term | Definition |
+| :--- | :--- | 
+| *Daily Average Dry Bulb Temperature* | the average temperature of the air measured by a therometer that is shielded for radiation and moisture|
+| *Electricity demand* | the total amount of electrical power being used at a specific moment, reflecting the instantaneous load on the power grid | 
+| *Extreme weather event* | rare weather occurrence that is outside of the range of average weather patterns for a particular location and time of year |
+| *Linear regression model* | fundamental supervised machine learning algorithm used to model the relationship between a dependent variable and one or more indepedent variables | 
+| *MWH* | megawatt-hour; a unit of energy representing one million watt-hours; used to measure electricity consumption or generation over time| 
+| *NOAA* | National Oceanic and Atmospheric Administration; U.S. federal agency that studies and monitors the oceans, atmosphere, and coastal areas to provide critical information to the public | 
+| *Random forest model* | ensemble machine learning algorithm that builds multiple decision trees and combines their outputs to improve prediction accuracy| 
 
 #### Project Domain
 The main domain that this project lives in is Demand Forecasting Analytics. Demand forecasting analytics focuses on understanding the different factors that influence electricity consumption at certain times. By combining historical electricity consumption data with external variables such as weather conditions, analysts can identify relationships to accurately predict future energy demands. These insights allow energy companies to make informed decisions about generation and distribution. Additionally, anticipating unusual demand patterns is an important aspect of this domain. By analyzing how weather variability affects energy usage, forecasting models can help energy companies better prepare for these scenarios.
