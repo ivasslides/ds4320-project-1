@@ -63,33 +63,65 @@ The main domain that this project lives in is Demand Forecasting Analytics. Dema
 ...
 
 #### Code Used
-*table* 
+| File | Brief Description | Link |
+| :--- | :--- | :--- | 
+| analysis.ipynb| .... | [link]() | 
+| data-cleaning.ipynb| .... | [link]() | 
+| data-loading.ipynb| Loads 8 weather csv files and 1 energy csv file, cleans up extra columns, and loads each city's Dataframe and energy dataframe into 5 total csv files and duckdb tables. | [link]() | 
+| pr_chart.ipynb| .... | [link]() | 
+| quant-of-uncertainty.ipynb| Calculates standard deviation for `DailyAverageDryBulbTemperature` for each season, for each city. Results are highlighted in Metadata/Uncertainty. | [link]() | 
+| visualizations.ipynb| ... | [link]() | 
 
 #### Bias Identificaton 
-... 
+There are two main areas of where bias could have been introduced in the data collection process: geographic decisions and data cleaning decisions. The bias from geographic decisions could have stemmed from my personal choices of the stations at the beginning of the data collection process. While I tried to choose stations and areas that were in different geographic areas, to attempt to be fully representative of the state of Virginia, there could easily be some bias still included within that because of how variable weather can be. The bias from data cleaning decisions could have appeared when choosing to drop columns, and even more so when converting many of the columns values to be floats, not strings, and rounding out of the intervals.
+
 
 #### Bias Mitigation
-... 
+The bias from geographic decisions can be quantified in analysis by quantifying geographic variability. This would entail measuring differences in temperature and other features across the 4 cities to understand how representative each location is to the mean. The bias from data cleaning decisions can be handled by using imputation instead of dropping all missing values. Ideally, this will help reduce any additional bias from data loss.
+
 
 #### Rationale 
-.... 
-
+The data cleaning decisions were made with keeping the analysis straightforward and simple in mind. The last section in data-loading.ipynb drops all rows where `DailyAverageDryBulbTemperature` is NaN, because that signifies that those entries were hourly entries and not daily entries. For this analysis, we are looking at daily patterns and not necessarily as concerned with hourly patterns over the course of 13 years. This might introduce some uncertainty in the analysis because some smaller extreme weather events might have been dropped if they were only marked during hourly measurements. The values for the other daily measurement columns were converted from strings to floats for easier analysis, as wel as consistency throughout the dataset. 
+ 
 
 ## Metadata
 #### Schema
 ... 
 
 #### Data Table 
-*table* 
+| Table | Brief Description | Link |
+| :--- | :--- | :--- |
+| *cville* | Temperature and other weather measurements from Charlottesville, VA from 12/31/2005 - 12/31/2018 | [link]() | 
+| *DOM_hourly* | Electricity usage measurements, in megawatts, from Dominion Energy from 12/31/2005 - 12/31/2018 | [link]() |
+| *dulles* | Temperature and other weather measurements from Washington-Dulles Airport, VA from 12/31/2005 - 12/31/2018 | [link]() | 
+| *lynchburg* | Temperature and other weather measurements from Lynchburg, VA from 12/31/2005 - 12/31/2018 | [link]() | 
+| *norfolk* | Temperature and other weather measurements from Norfolk, VA from 12/31/2005 - 12/31/2018 | [link]() 
 
 #### Data Dictionary 
-*table* 
+| Name | Data type | Description | Example |
+| :--- | :--- | :--- | :--- |
+| *Entry_ID* | string | Primary key for each observation, which is formed by the station name + date | Charlottesville_2006-01-02_23:00 | 
+| *Date* | datetime64 | Shows the date in year-month-day hour:minute:second of when the measurements were recorded | 2014-05-15 23:00:00 | 
+| *Station* | string | Name of the station where measurements were taken |  Charlottesville | 
+| *DOM_MW* | float | Electricity usage, measured in megawatts, reported by Dominion Energy | 17403.0 | 
+| *DailyAverageDryBulbTemperature* | float | Average temperature of the air measured by a thermometer that is shielded from radiation and moisture, in degrees Fahrenheit | 74.0 | 
+| *DailyMinimumDryBulbTemperature* | float | Minimum temperature for the day, in degrees Fahrenheit | 64.0 | 
+| *DailyMaximumDryBulbTemperature* | float | Maximum temperature for the day, in degrees Fahrenheit| 88.0 | 
+| *DailyAverageStationPressure* | float | Daily average station pressure, in inches or mercury, to hundredths | 29.96 | 
+| *DailyDepartureFromNormalAverageTemperature* | float | Average temperature departure from normal temperature, using '-' to indicate below normal | -14.8 | 
+| *DailyAverageWetBulbTemperature* | float | Average temperature of the air, taking into account humidith, wind speed, sun angle, and cloud cover | 55.0 | 
+| *DailyWeather* | string | Daily occurences of types of weather, indicated using abbrevations from GHCN-Daily dataset | RA BR | 
+| *DailySnowfall* | float | Daily measurement of snowfall, in inches to the tenths | 0.9 |
+| *DailySnowDepth* | float | Daily reading of snow on the ground, in inches | 1.0 | 
+| *DailyPrecipitation* | float | Water equivalent amount of precipitaton for the day, in inches to hundredths | 0.48 | 
+| *DailyAverageWindSpeed* | float | Daily average wind speed, in miles per hour, to tenths | 7.2 | 
+| *DailyPeakWindSpeed* | float | Peak wind speed for the day, measured in whole miles per hour | 18.0 | 
+| *DailyPeakWindDirection* | integer | Direction of wind during peak wind speed for the day, given as direction from which wind was blowing using a 360 degree compass with respect to true north | 275 | 
+| *DailySustainedWindDirection* | integer | Direction of wind during maximum sustained wind speed for the day, given as direction from which wind was blowing using a 360 degree compass with respect to true north | 180 | 
+| *DailySustainedWindSpeed* | float | Maximum sustained wind speed for the day, for at least 2 minute, in whole miles per hour | 17.0 | 
+| *DailyCoolingDegreeDays* | float | Measures how much the daily average temperature exceeds 65F, indicating the demand for air conditioning to keep a building cool | 23.0 | 
+| *DailyHeatingDegreeDays* | float | Measures how much the daily average temperature falls below 65F, indicating the demand for heating to keep a building warm | 20.0 | 
+
 
 #### Uncertainty 
-... 
-
-to input code 
-```python
-# code here
-import pandas as pd
-``` 
+To quantify uncertainty for numerical features, I calculated the standard deviation for one of the most important features: `DailyAverageDryBulbTemperature`. I did this for each season to ensure that there was minimal bias from that, and for each city as well. For all cities in the fall, the standard deviation of the `DailyAverageDryBulbTemperature` was between 11.25 and 12.41. For all cities in the winter, the standrd deviation was between 9.58 and 10.09. For all cities in the spring, the standard deviation was between 11.34 and 12.32. For all cities in the summer, the standard deviation was between 4.74 and 5.38. The claculations for this can be found in the 'quant-of-uncertainty.ipynb' file in the repo [here](https://github.com/ivasslides/ds4320-project-1/blob/main/quant-of-uncertainty.ipynb).
