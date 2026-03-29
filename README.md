@@ -10,8 +10,8 @@ This repository contains background information, metadata, data files, and Pytho
 | DOI | ..... |
 | Press Release | [link to Press Release](https://github.com/ivasslides/ds4320-project-1/blob/main/press_release.md) | 
 | Data | [link to data folder](https://myuva-my.sharepoint.com/:f:/g/personal/fbv2sc_virginia_edu/IgD0_dw8bOXbQqtcXuFmWMcQAbQHJMFY-ToaHPTsxSS_jvY?e=cAJDgh)  | 
-| Pipeline | .... | 
-| License | ... | 
+| Pipeline | [link to pipeline files](https://github.com/ivasslides/ds4320-project-1/tree/main/pipelines) | 
+| License | [link to license](https://github.com/ivasslides/ds4320-project-1/tree/main?tab=MIT-1-ov-file) | 
 
 
 ## Problem Definition
@@ -65,12 +65,12 @@ To start the raw data acquisition process, I did some research to find weather d
 #### Code Used
 | File | Brief Description | Link |
 | :--- | :--- | :--- | 
-| analysis.ipynb| .... | [link]() | 
-| data-cleaning.ipynb| .... | [link]() | 
-| data-loading.ipynb| Loads 8 weather csv files and 1 energy csv file, cleans up extra columns, and loads each city's Dataframe and energy dataframe into 5 total csv files and duckdb tables. | [link]() | 
-| pr_chart.ipynb| .... | [link]() | 
-| quant-of-uncertainty.ipynb| Calculates standard deviation for `DailyAverageDryBulbTemperature` for each season, for each city. Results are highlighted in Metadata/Uncertainty. | [link]() | 
-| visualizations.ipynb| ... | [link]() | 
+| *1-data-loading.ipynb* | Loads 8 weather csv files and 1 energy csv file, cleans up extra columns, and loads each city's Dataframe and energy dataframe into 5 total parquet files and duckdb tables. | [link](https://github.com/ivasslides/ds4320-project-1/blob/main/pipelines/1-data-loading.ipynb) | 
+| *2-data-cleaning.ipynb* | Cleans data tables by removing NaNs and ensuring all are in float format, and adds extreme weather event classification column | [link](https://github.com/ivasslides/ds4320-project-1/blob/main/pipelines/2-data-cleaning.ipynb) | 
+| *3-analysis.ipynb* | Merges weather and energy data to create combined_df file, and runs Linear regression and Random forest models on the data to assess performance of accurate prediction of energy usage overall, for normal weather conditions, and for extreme weather conditions. | [link](https://github.com/ivasslides/ds4320-project-1/blob/main/pipelines/3-analysis.ipynb) |
+| *4-visualizations.ipynb* | Creates a bar chart showing the performance metrics (RMSE, MAE, R^2) for each model for each scenario, and saves image as png | [link](https://github.com/ivasslides/ds4320-project-1/blob/main/pipelines/4-visualization.ipynb)  
+| *pr_chart.ipynb* | Creates line chart to demonstrate the corresponding changes in temperature and energy usage, for Charlottesville specifically, for the Press Release | [link](https://github.com/ivasslides/ds4320-project-1/blob/main/pr_chart.ipynb) | 
+| *quant-of-uncertainty.ipynb* | Calculates standard deviation for `DailyAverageDryBulbTemperature` for each season, for each city, and results are highlighted in Metadata/Uncertainty. | [link](https://github.com/ivasslides/ds4320-project-1/blob/main/quant-of-uncertainty.ipynb) | 
 
 #### Bias Identificaton 
 There are two main areas of where bias could have been introduced in the data collection process: geographic decisions and data cleaning decisions. The bias from geographic decisions could have stemmed from my personal choices of the stations at the beginning of the data collection process. While I tried to choose stations and areas that were in different geographic areas, to attempt to be fully representative of the state of Virginia, there could easily be some bias still included within that because of how variable weather can be. The bias from data cleaning decisions could have appeared when choosing to drop columns, and even more so when converting many of the columns values to be floats, not strings, and rounding out of the intervals.
@@ -86,16 +86,18 @@ The data cleaning decisions were made with keeping the analysis straightforward 
 
 ## Metadata
 #### Schema
-![Schema](project1.drawio.png) 
+![Schema](images/project1-erd.png) 
 
 #### Data Table 
 | Table | Brief Description | Link |
 | :--- | :--- | :--- |
-| *cville* | Temperature and other weather measurements from Charlottesville, VA from 12/31/2005 - 12/31/2018 | [link]() | 
-| *DOM_hourly* | Electricity usage measurements, in megawatts, from Dominion Energy from 12/31/2005 - 12/31/2018 | [link]() |
-| *dulles* | Temperature and other weather measurements from Washington-Dulles Airport, VA from 12/31/2005 - 12/31/2018 | [link]() | 
-| *lynchburg* | Temperature and other weather measurements from Lynchburg, VA from 12/31/2005 - 12/31/2018 | [link]() | 
-| *norfolk* | Temperature and other weather measurements from Norfolk, VA from 12/31/2005 - 12/31/2018 | [link]() 
+| *combined_df* | Dataset of all cleaned weather data from 4 cities merged with energy data for analysis purposes, in parquet format | [link](https://myuva-my.sharepoint.com/:u:/g/personal/fbv2sc_virginia_edu/IQA2ElxHacS5Tp66CDR1bq2ZAT1-BNz2ZhIihX55oXrm0-g?e=6YBbFB)
+| *cville_cleaned* | Cleaned dataset of temperature and other weather measurements from Charlottesville, VA from 12/31/2005 - 12/31/2018, in parquet format | [link](https://myuva-my.sharepoint.com/:u:/g/personal/fbv2sc_virginia_edu/IQAd4-g7q3amR4K5oGu8fmHZAXoVvGSsJCgcgltqZbOxmI4?e=DQuxgY) | 
+| *DOM_hourly* | Electricity usage measurements, in megawatts, from Dominion Energy from 12/31/2005 - 12/31/2018, in parquet format | [link](https://myuva-my.sharepoint.com/:u:/g/personal/fbv2sc_virginia_edu/IQBzbVHUg3U9TLdTGYGYbP9iAWEk3xl3HkVQ-KwfpbFqSuw?e=YWzys8) |
+| *dulles_cleaned* | Cleaned dataset of temperature and other weather measurements from Washington-Dulles Airport, VA from 12/31/2005 - 12/31/2018, in parquet format | [link](https://myuva-my.sharepoint.com/:u:/g/personal/fbv2sc_virginia_edu/IQDmMFJBNizAR68yxU50BPtdASnDwINQaaS6pw4n1bmOqZA?e=zREWIG) | 
+| *lynchburg_cleaned* | Cleaned dataset of temperature and other weather measurements from Lynchburg, VA from 12/31/2005 - 12/31/2018, in parquet format | [link](https://myuva-my.sharepoint.com/:u:/g/personal/fbv2sc_virginia_edu/IQA8oU2hJtlKRoM4xiSu2S5JAVsITH-jg0Eh9Q3XArcfwpQ?e=WgV7Vg) | 
+| *model_results* | Dataframe of performance metrics of the two ML models trained and tested on the data for visualization purposes, in parquet format | [link](https://myuva-my.sharepoint.com/:u:/g/personal/fbv2sc_virginia_edu/IQBYkVigDzZFR78llrItyX4SATHJDeo8DMjqOqvobIEB7SM?e=XvYdVS) 
+| *norfolk_cleaned* | Cleaned dataset of temperature and other weather measurements from Norfolk, VA from 12/31/2005 - 12/31/2018, in parquet format | [link](https://myuva-my.sharepoint.com/:u:/g/personal/fbv2sc_virginia_edu/IQBzpUYQttdATrefBY2RxQF9AZMVug03-0qEzvNf9WwZyZ4?e=AhzDSr) 
 
 #### Data Dictionary 
 | Name | Data type | Description | Example |
