@@ -1,7 +1,7 @@
-# DS4320 Project 1: ...TITLE....
+# DS4320 Project 1: Predicting Energy Usage
 
-Executive Summary
-///........//// 
+### Executive Summary
+This repository contains background information, metadata, data files, and Python code for a DS4320 Project 1 about the accuracy of different machine learning models for forecasting energy demands based on weather data. The background information explains why this topic is relevant today. The metadata provides a data dictionary, bias and uncertainty identificaion, and other rationales. The cleaned data files are included in the `data` folder, along with Python code that runs through the analysis and visualization of the solution. 
 
 | Spec | Value |
 | :--- | :--- |
@@ -60,7 +60,7 @@ The main domain that this project lives in is Demand Forecasting Analytics. Dema
 
 ## Data Creation 
 #### Raw Data Acquistition 
-...
+To start the raw data acquisition process, I did some research to find weather data and energy usage data. I found a Kaggle datatset called 'Hourly Energy Consumption' which is a collection of PJM Interconnection LLC data. I chose to only use the DOM_hourly data, which is data from Dominion Virginia Power. Additionally, I found NOAA's Climate Data Online Datasets page to find weather data from any time from any place. I selected the same dates as the DOM_hourly data and chose 4 cities from 4 different areas in Virginia to get a representative view of the energy usage and weather relationship. The cities I chose are Charlottesville (station at Cville Airport), Washington-Dulles airport, Norfolk (station at Norfolk Int. Airport), and Lynchburg (station at Lynchburg Airport). The data was downloaded from each website in a csv format, and then loaded into a duckdb database as tables after each stage of the data loading and data cleaning proccess. 
 
 #### Code Used
 | File | Brief Description | Link |
@@ -86,7 +86,7 @@ The data cleaning decisions were made with keeping the analysis straightforward 
 
 ## Metadata
 #### Schema
-... 
+![Schema](project1.drawio.png) 
 
 #### Data Table 
 | Table | Brief Description | Link |
