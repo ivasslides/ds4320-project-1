@@ -7,7 +7,7 @@ This repository contains background information, metadata, data files, and Pytho
 | :--- | :--- |
 | Name | Iliana Vasslides | 
 | NetID | fbv2sc | 
-| DOI | ..... |
+| DOI | [doi](https://doi.org/10.5281/zenodo.19324395) |
 | Press Release | [link to Press Release](https://github.com/ivasslides/ds4320-project-1/blob/main/press_release.md) | 
 | Data | [link to data folder](https://myuva-my.sharepoint.com/:f:/g/personal/fbv2sc_virginia_edu/IgD0_dw8bOXbQqtcXuFmWMcQAbQHJMFY-ToaHPTsxSS_jvY?e=cAJDgh)  | 
 | Pipeline | [link to pipeline files](https://github.com/ivasslides/ds4320-project-1/tree/main/pipelines) | 
