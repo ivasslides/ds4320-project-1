@@ -65,6 +65,7 @@ To start the raw data acquisition process, I did some research to find weather d
 #### Code Used
 | File | Brief Description | Link |
 | :--- | :--- | :--- | 
+| *0-pipeline.md* | Markdown file containing the analysis and visualization code | [link](https://github.com/ivasslides/ds4320-project-1/blob/main/pipelines/0-pipeline.md) 
 | *1-data-loading.ipynb* | Loads 8 weather csv files and 1 energy csv file, cleans up extra columns, and loads each city's Dataframe and energy dataframe into 5 total parquet files and duckdb tables. | [link](https://github.com/ivasslides/ds4320-project-1/blob/main/pipelines/1-data-loading.ipynb) | 
 | *2-data-cleaning.ipynb* | Cleans data tables by removing NaNs and ensuring all are in float format, and adds extreme weather event classification column | [link](https://github.com/ivasslides/ds4320-project-1/blob/main/pipelines/2-data-cleaning.ipynb) | 
 | *3-analysis.ipynb* | Merges weather and energy data to create combined_df file, and runs Linear regression and Random forest models on the data to assess performance of accurate prediction of energy usage overall, for normal weather conditions, and for extreme weather conditions. | [link](https://github.com/ivasslides/ds4320-project-1/blob/main/pipelines/3-analysis.ipynb) |
