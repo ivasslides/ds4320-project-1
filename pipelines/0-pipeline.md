@@ -340,7 +340,8 @@ plt.savefig('visualization.png', bbox_inches='tight')
 logger.info("Visualization created and saved as visualization.png")
 
 plt.show() 
-
 ```
+![chart](../images/visualization.png)
+
 
 Using this visualization, we can see that the Random Forest model performs much better than the Linear Regression model in all three scenarios, across all metrics even though the RMSE and MAE values are high for both models. In terms of the models' prediction accuracy for extreme weather events compared to normal or overall weather events, there is an slight increase in error for the extreme weather events. However, looking at the R^2 values, for both models the R^2 values for extreme weather events is higher than the other two scenarios, which means that there was less variation in the model for these scenarios. Even though these models contained some error, this information can be useful to electricity companies in the future in terms of working to forecast the effects of extreme weather events on their energy demand. 
